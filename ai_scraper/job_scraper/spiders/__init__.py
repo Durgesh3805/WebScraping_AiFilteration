@@ -1,15 +1,14 @@
-# This package will contain the spiders of your Scrapy project
-#
-# Please refer to the documentation for information on how to create and manage
-# your spiders.
+from scrapy.crawler import CrawlerProcess
+from scrapy.utils.project import get_project_settings
 
-import scrapy
+from job_scraper.spiders.quotes_spider import QuotesSpider
+# from job_scraper.spiders.another_spider import AnotherSpider  # Add more as needed
 
-class JobSpider(scrapy.Spider):
-    name = "job_spider"
+def run_all_spiders():
+    process = CrawlerProcess(settings=get_project_settings())
 
-    def start_requests(self):
-        yield scrapy.Request(url="https://example.com", callback=self.parse)
+    process.crawl(QuotesSpider)
+    # process.crawl(AnotherSpider)
+    # Add more crawlers here dynamically or use config for automation
 
-    def parse(self, response):
-        print("Scraped:", response.url)
+    process.start()

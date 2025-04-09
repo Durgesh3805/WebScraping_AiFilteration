@@ -1,8 +1,6 @@
-import subprocess
-
-def run_spider():
-    print("[MAIN] Running Scrapy spider...")
-    subprocess.run(["scrapy", "crawl", "job_spider"], cwd="job_scraper")  
+from job_scraper import start_scraper
+from filter import run_filtering
 
 if __name__ == "__main__":
-    run_spider()
+    start_scraper()      # Runs all spiders dynamically
+    run_filtering()      # Runs filtering after scraping
