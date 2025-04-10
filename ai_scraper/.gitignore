@@ -1,13 +1,49 @@
-# Python
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-env/
+*.py[cod]
+*$py.class
+
+# Virtual environment
 venv/
-
-# VS Code
-.vscode/
-
-# Environment variables
 .env
+.venv/
+
+# Scrapy-specific
+.scrapy/
+*.log
+*.db
+*.sqlite
+
+# Logs and data
+*.log
+*.json
+*.csv
+*.xml
+
+# IDE/Editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+*.swp
+*.swo
+*.bak
+
+# Compiled files
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Test cache
+.pytest_cache/
+coverage/
+
+# Custom
+raw_jobs.json
