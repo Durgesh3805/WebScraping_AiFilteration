@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffffff; /* Default white background */
+  --foreground: #171717; /* Default dark text */
 }
 
 @theme inline {
@@ -12,15 +12,16 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Prevent the background change in dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff; /* Override to always keep white background */
+    --foreground: #171717; /* Keep the text dark */
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--background) !important; /* Force white background */
+  color: var(--foreground); /* Dark text color */
   font-family: Arial, Helvetica, sans-serif;
 }
