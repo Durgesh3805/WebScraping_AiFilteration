@@ -78,7 +78,7 @@ export default function NavbarClient() {
       </div>
 
       {/* Desktop Login */}
-      <Link href="/login" className="hidden md:block">
+      <Link href="/Login" className="hidden md:block">
         <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-md transition duration-300">
           Login/Sign Up
         </button>
@@ -154,7 +154,7 @@ export default function NavbarClient() {
             )}
           </div>
 
-          <Link href="/login">
+          <Link href="/Login">
             <button className="bg-red-500 hover:bg-red-600 text-white w-full py-2 rounded-md transition duration-300">
               Login/Sign Up
             </button>
