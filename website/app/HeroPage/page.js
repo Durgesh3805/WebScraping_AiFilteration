@@ -1,5 +1,5 @@
-import HeroSection from "../component/ui/HeroAllJobSearch";
-import JobCategoryCard from "../component/ui/HeroJobSearch";
+import HeroSection from "../component/HeroAllJobSearch";
+import JobCategoryCard from "../component/HeroJobSearch";
 export default function HeroPage() {
   return (
     <main>

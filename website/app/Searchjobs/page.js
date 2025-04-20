@@ -2,11 +2,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
-import SearchHowItWork from "../component/ui/components/SearchHowItWork";
-import SearchCard from "../component/ui/components/SearchCard";
-import SearchHearPage from "../component/ui/components/SearchHearPage";
-import SearchFooter from "../component/ui/components/SearchFooter";
-import PostJobNavbar from "../component/ui/components/PostjobNavbar";// Import the navbar component
+import SearchHowItWork from "../component/components/SearchHowItWork";
+import SearchCard from "../component/components/SearchCard";
+import SearchHearPage from "../component/components/SearchHearPage";
+import SearchFooter from "../component/components/SearchFooter";
+import PostJobNavbar from "../component/components/PostjobNavbar";// Import the navbar component
 
 export default function CVSearchPage() {
   const [email, setEmail] = useState("");

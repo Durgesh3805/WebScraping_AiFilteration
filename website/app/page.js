@@ -1,13 +1,13 @@
-import LandingPage from "./component/ui/LandingPage";
-import TimeCard from "./component/ui/TimeCard";
-import HireCard from "./component/ui/HireCard";
-import TrustedCard from "./component/ui/TrustedCard";
-import FooterPage from "./component/ui/FooterPage";
-import FeatureCard from "./component/ui/FeatureCard";
-import TalentCard from "./component/ui/TalentCard";
-import CandidateCard from "./component/ui/CandidateCard";
-import InterviewCard from "./component/ui/InterviewCard";
-import RecruitmentCard from "./component/ui/RecruitmentCard";
+import LandingPage from "./component/LandingPage";
+import TimeCard from "./component/TimeCard";
+import HireCard from "./component/HireCard";
+import TrustedCard from "./component/TrustedCard";
+import FooterPage from "./component/FooterPage";
+import FeatureCard from "./component/FeatureCard";
+import TalentCard from "./component/TalentCard";
+import CandidateCard from "./component/CandidateCard";
+import InterviewCard from "./component/InterviewCard";
+import RecruitmentCard from "./component/RecruitmentCard";
 export default function Home() {
   return (
     <main>

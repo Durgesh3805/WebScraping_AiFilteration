@@ -2,10 +2,10 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Head from "next/head";
-import HowItWorksSection from "../component/ui/components/HowItWorksSection";
-import HireStaff from "../component/ui/components/HireStaff";
-import EmployerPage from "../component/ui/components/EmployerPage";
-import PostjobFooter from "../component/ui/components/PostjobFooter";
+import HowItWorksSection from "../component/components/HowItWorksSection";
+import HireStaff from "../component/components/HireStaff";
+import EmployerPage from "../component/components/EmployerPage";
+import PostjobFooter from "../component/components/PostjobFooter";
 
 export default function PostJobPage() {
   const [email, setEmail] = useState("");
