@@ -16,7 +16,7 @@ const GrabJobsComponent = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-pink-50 p-5">
+    <div className="flex justify-center items-center mb-20 p-5">
       <div className="max-w-3xl w-full bg-cream-50 rounded-2xl shadow-md p-8 relative">
         <div className="text-center">
           <h1 className="text-2xl font-semibold text-gray-800 mb-2">

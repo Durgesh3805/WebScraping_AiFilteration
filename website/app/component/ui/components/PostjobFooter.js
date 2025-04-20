@@ -1,4 +1,4 @@
-"use client";  // Add this if using Next.js App Router
+
 
 import Link from "next/link";
 import Image from "next/image";
