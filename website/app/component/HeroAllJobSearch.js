@@ -13,7 +13,7 @@ const HeroSection = () => {
   return (
     <>
       {/* Red gradient background */}
-      <div className="bg-gradient-to-b from-red-500 to-red-600 pt-8 pb-32">
+      <div className="bg-gradient-to-b from-red-400 to-red-500 pt-8 pb-32">
         <Navbar />
       </div>
 
@@ -24,16 +24,16 @@ const HeroSection = () => {
             <div className="flex border-b border-gray-200">
               <button
                 className={`mr-8 font-medium pb-4 ${activeTab === 'all'
-                  ? 'text-orange-500 border-b-2 border-orange-500'
-                  : 'text-gray-600 hover:text-orange-500'}`}
+                  ? 'text-orange-400 border-b-2 border-orange-500'
+                  : 'text-gray-500 hover:text-orange-500'}`}
                 onClick={() => setActiveTab('all')}
               >
                 All Jobs
               </button>
               <button
                 className={`font-medium pb-4 ${activeTab === 'internships'
-                  ? 'text-orange-500 border-b-2 border-orange-500'
-                  : 'text-gray-600 hover:text-orange-500'}`}
+                  ? 'text-orange-400 border-b-2 border-orange-400'
+                  : 'text-gray-500 hover:text-orange-500'}`}
                 onClick={() => setActiveTab('internships')}
               >
                 Internships
@@ -55,7 +55,7 @@ const HeroSection = () => {
               <input
                 type="text"
                 placeholder="Search Job Title, Company, Skills"
-                className="pl-10 pr-4 py-3 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                className="pl-10 pr-4 py-3 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent"
                 autoFocus
               />
             </div>
@@ -63,7 +63,7 @@ const HeroSection = () => {
             {/* Course Selection */}
             <div className="md:w-64">
               <select
-                className="w-full py-3 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                className="w-full py-3 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent"
               >
                 <option value="">Select Course</option>
                 <option value="engineering">Engineering</option>
@@ -77,12 +77,12 @@ const HeroSection = () => {
               <input
                 type="text"
                 placeholder="Enter location"
-                className="w-full py-3 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                className="w-full py-3 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent"
               />
             </div>
 
             {/* Search Button */}
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-lg px-6 py-3 transition-colors">
+            <button className="bg-orange-400 hover:bg-orange-500 text-white font-medium rounded-lg px-6 py-3 transition-colors">
               Search Jobs
             </button>
           </div>
@@ -90,7 +90,7 @@ const HeroSection = () => {
           {/* Advanced Search Link */}
           <div className="flex justify-end mt-4">
             <Link href="/advanced-search">
-              <span className="text-gray-600 hover:text-red-500 cursor-pointer">Advanced Search</span>
+              <span className="text-gray-600 hover:text-red-400 cursor-pointer">Advanced Search</span>
             </Link>
           </div>
         </div>
