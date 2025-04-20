@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import SocialLogin from '../component/components/SocialLogin';
 
 export default function EmployerSignup() {
   return (
@@ -144,7 +145,7 @@ export default function EmployerSignup() {
             >
               Sign Up
             </button>
-
+            <SocialLogin />
             <div className="text-center">
               <p className="text-gray-500 text-xs mt-1">
                 By signing up, you agree to the{" "}

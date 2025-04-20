@@ -4,6 +4,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import RotatingIllustration from '../component/components/RotatingIllustration';
+import SocialLogin from '../component/components/SocialLogin';
+
 export default function EmployerLogin() {
   return (
     <>
@@ -97,6 +99,7 @@ export default function EmployerLogin() {
                 </Link>
               </p>
             </div>
+            <SocialLogin/>
           </div>
         </div>
       </div>
