@@ -5,6 +5,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+
 import json
 
 class JobspressoSpider(scrapy.Spider):
@@ -58,9 +60,10 @@ class JobspressoSpider(scrapy.Spider):
             # Store the job data
             self.jobs_data.append({
                 'title': title,
-                'job_link': job_link,
                 'location': location,
-                'date_posted': date_posted
+                'posted_on': date_posted,
+                'link': job_link,
+
             })
 
     def closed(self, reason):

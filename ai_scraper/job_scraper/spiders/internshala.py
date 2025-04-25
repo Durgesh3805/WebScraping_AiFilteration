@@ -41,7 +41,7 @@ class InternshalaSpider(scrapy.Spider):
         ).css('span.round_tabs::text').getall()
 
         # If no skills found, set to "Not specified"
-        job['skills'] = ', '.join([s.strip() for s in skills if s.strip()]) or "Not specified"
+        job['skills/qualification'] = ', '.join([s.strip() for s in skills if s.strip()]) or "Not specified"
 
         self.save_to_json(job)
         yield job
