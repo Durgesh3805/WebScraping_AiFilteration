@@ -8,8 +8,6 @@ const HeroSection = () => {
   const [activeTab, setActiveTab] = useState('all');
   const [expandedSearch, setExpandedSearch] = useState(true); // Always expanded
 
-  
-
   return (
     <>
       {/* Red gradient background */}
@@ -19,9 +17,9 @@ const HeroSection = () => {
 
       <div className="max-w-7xl mx-auto px-4 -mt-24 mb-12">
         <div className="bg-white rounded-lg shadow-lg p-8">
-          {/* EXPANDED SEARCH VERSION - Orange tabs with close button */}
+          {/* Orange tabs with close button */}
           <div className="flex justify-between items-center mb-6">
-            <div className="flex border-b border-gray-200">
+            <div className="flex border-b border-gray-200 overflow-x-auto">
               <button
                 className={`mr-8 font-medium pb-4 ${activeTab === 'all'
                   ? 'text-orange-400 border-b-2 border-orange-500'
@@ -39,14 +37,11 @@ const HeroSection = () => {
                 Internships
               </button>
             </div>
-
-           
           </div>
 
-          {/* Search Section - With three fields */}
-          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-            {/* Job Title Search */}
-            <div className="flex-grow relative">
+          {/* Search Section */}
+          <div className="flex flex-col sm:flex-wrap sm:flex-row sm:gap-4 space-y-4 sm:space-y-0">
+            <div className="w-full sm:flex-1 relative">
               <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
                 <svg className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -60,8 +55,7 @@ const HeroSection = () => {
               />
             </div>
 
-            {/* Course Selection */}
-            <div className="md:w-64">
+            <div className="w-full sm:w-64">
               <select
                 className="w-full py-3 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent"
               >
@@ -72,8 +66,7 @@ const HeroSection = () => {
               </select>
             </div>
 
-            {/* Location Input */}
-            <div className="md:w-64">
+            <div className="w-full sm:w-64">
               <input
                 type="text"
                 placeholder="Enter location"
@@ -81,10 +74,11 @@ const HeroSection = () => {
               />
             </div>
 
-            {/* Search Button */}
-            <button className="bg-orange-400 hover:bg-orange-500 text-white font-medium rounded-lg px-6 py-3 transition-colors">
-              Search Jobs
-            </button>
+            <div className="w-full sm:w-auto">
+              <button className="w-full sm:w-auto bg-orange-400 hover:bg-orange-500 text-white font-medium rounded-lg px-6 py-3 transition-colors">
+                Search Jobs
+              </button>
+            </div>
           </div>
 
           {/* Advanced Search Link */}
@@ -95,10 +89,10 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Advertisement Banner - Always present */}
+        {/* Advertisement Banner */}
         <div className="mt-8 bg-gray-900 rounded-lg overflow-hidden">
           <Link href="https://example.com/tcs-challenge">
-            <div className="relative h-24 md:h-20">
+            <div className="relative h-40 sm:h-24 md:h-20">
               <Image
                 src="/fresherworldweb.jpg"
                 alt="TCS Careers - The greatest battle of aspiration and skill awaits"

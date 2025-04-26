@@ -125,7 +125,6 @@ const JobsForYouSection = () => {
     }
   ];
 
-  // Scroll the carousel to the left
   const scrollLeft = () => {
     if (carouselRef.current) {
       carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' });
@@ -133,7 +132,6 @@ const JobsForYouSection = () => {
     }
   };
 
-  // Scroll the carousel to the right
   const scrollRight = () => {
     if (carouselRef.current) {
       carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' });
@@ -143,12 +141,11 @@ const JobsForYouSection = () => {
 
   return (
     <div className="py-12 bg-red-50 bg-opacity-40">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Title and Navigation Arrows */}
-        <div className="flex justify-between items-center mb-8 ">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 text-center w-full">Jobs For You</h2>
-
-          <div className="flex space-x-2">
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 text-center w-full">Jobs For You</h2>
+          <div className="flex space-x-2 absolute right-4 md:right-8">
             <button 
               onClick={scrollLeft} 
               className="bg-white p-2 rounded-full shadow hover:shadow-md border border-gray-200 transition-all"
@@ -177,7 +174,7 @@ const JobsForYouSection = () => {
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {jobCategories.map((category, index) => (
-            <div key={index} className="flex-shrink-0 w-48">
+            <div key={index} className="flex-shrink-0 w-40 sm:w-48">
               <JobCategoryCard 
                 icon={category.icon} 
                 title={category.title}
