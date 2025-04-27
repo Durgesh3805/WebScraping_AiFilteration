@@ -14,7 +14,7 @@ export default function HeroPage() {
       <HeroFindJobVacancy />
       <HeroFreshersJob />
       <HeroTestimonial />
-      <GrabJobsFooter  />
+      <GrabJobsFooter  />     
     </main>
   );
 }
