@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import SocialLogin from '../component/components/SocialLogin';
 export default function EmployerSignup() {
   return (
     <div className="flex flex-col md:flex-row min-h-screen">
@@ -144,6 +144,7 @@ export default function EmployerSignup() {
             >
               Sign Up
             </button>
+            <SocialLogin/>
 
             <div className="text-center">
               <p className="text-gray-500 text-xs mt-1">

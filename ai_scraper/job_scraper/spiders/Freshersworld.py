@@ -37,13 +37,10 @@ class FreshersworldSpider(scrapy.Spider):
                 'location': job.css("span.job-location a::text").get(default='').strip(),
                 'experience': job.css("span.experience::text").get(default='').strip(),
                 'salary': re.sub(r"\s+", " ", job.css("span.qualifications::text").get(default="")).strip(),
-                'qualification': formatted_qualification,
-                'posted_time': job.css("div.text-ago span.ago-text::text").get(default="").strip(),
-                'job_link': apply_link,
-                'about_company': "Not available",  # Placeholder; FreshersWorld doesn't have this.
-                'full_description': "Not available",  # Optional: could scrape from apply_link if needed.
-                'skills_required': [],  # Not directly listed
-                'job_type': "Full Time"  # Assumed; FreshersWorld doesn't state job type clearly.
+                'posted_on': job.css("div.text-ago span.ago-text::text").get(default="").strip(),
+                'link': apply_link,
+                'skills/qualification': formatted_qualification,
+
             }
 
             self.data.append(item)
