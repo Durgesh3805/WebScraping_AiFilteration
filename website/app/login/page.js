@@ -19,8 +19,8 @@ export default function EmployerLogin() {
         </div>
 
         {/* Right: server-rendered login form */}
-        <div className="w-full md:w-1/2 flex flex-col p-8 md:p-12 lg:p-16">
-          <div className="flex justify-between items-center mb-16">
+        <div className="w-full md:w-1/2 flex flex-col ">
+          <div className="flex justify-between items-center mb-6">
             <div className="md:hidden">
               <Image
                 src="/gj_logo_new.svg"
@@ -33,11 +33,11 @@ export default function EmployerLogin() {
           </div>
 
           <div className="w-full max-w-md mx-auto">
-            <h1 className="text-3xl font-bold text-gray-800 mb-4">Login</h1>
-            <p className="text-gray-600 text-lg mb-8">Welcome back!</p>
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">Login</h1>
+            <p className="text-gray-600 text-lg mb-3">Welcome back!</p>
 
             <form action="/login" method="POST">
-              <div className="mb-6">
+              <div className="mb-3">
                 <label htmlFor="email" className="block text-gray-700 mb-2">
                   Email <span className="text-red-500">*</span>
                 </label>
@@ -51,7 +51,7 @@ export default function EmployerLogin() {
                 />
               </div>
 
-              <div className="mb-6">
+              <div className="mb-3">
                 <label htmlFor="password" className="block text-gray-700 mb-2">
                   Password <span className="text-red-500">*</span>
                 </label>
@@ -65,7 +65,7 @@ export default function EmployerLogin() {
                 />
               </div>
 
-              <div className="flex justify-between items-center mb-8">
+              <div className="flex justify-between items-center mb-3">
                 <div className="flex items-center">
                   <input
                     id="remember-me"
@@ -90,7 +90,7 @@ export default function EmployerLogin() {
               </button>
             </form>
 
-            <div className="text-center mt-8">
+            <div className="text-center mt-2">
               <p className="text-gray-700">
                 New to GrabJobs?{' '}
                 <Link href="/signup" className="text-blue-500 font-medium hover:text-blue-700">
@@ -98,6 +98,9 @@ export default function EmployerLogin() {
                 </Link>
               </p>
 
+            </div>
+            <div className="my-3 flex items-center justify-center ">
+                <span className="text-gray-500">or</span>
             </div>
             <SocialLogin/>
           </div>
