@@ -126,9 +126,12 @@ export default function JobDetails({ job }) {
           </InfoCard>
         )}
 
-        <InfoCard title="Salary" icon="/download.png">
-          <p className="text-gray-600 mt-1 text-sm">Salary : Not Disclosed</p>
-        </InfoCard>
+        {job.salary && (
+          <InfoCard title="Salary" icon="/download.png">
+            <p className="text-gray-600 mt-1 text-sm">Salary: {job.salary}</p>
+          </InfoCard>
+      )}
+
 
         {job.workDays && (
           <InfoCard title="Work Detail" icon="/images.png">
@@ -142,6 +145,33 @@ export default function JobDetails({ job }) {
             {job.jobTiming && <p className="text-gray-600 text-sm">Job Timing: {job.jobTiming}</p>}
           </InfoCard>
         )}
+
+        {job.posted_on && (
+          <InfoCard title="Posted On" icon="/calendar.png">
+            <p className="text-gray-600 mt-1 text-sm">Posted: {job.posted_on}</p>
+          </InfoCard>
+        )}
+
+{job.link && (
+  <InfoCard title="Job Link" icon="/link.png">
+    <p className="text-gray-600 mt-1 text-sm">
+      <a href={job.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+        View Job Posting
+      </a>
+    </p>
+  </InfoCard>
+)}
+
+
+{job["skills/qualification"] && (
+  <InfoCard title="Qualification" icon="/education.png">
+    <p className="text-gray-600 mt-1 text-sm">
+      Qualification: {job["skills/qualification"]}
+    </p>
+  </InfoCard>
+)}
+
+
 
         {job.perks?.length > 0 && (
           <InfoCard title="Perks" icon="/download (1).png" last>
