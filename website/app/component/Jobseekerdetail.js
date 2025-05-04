@@ -3,7 +3,7 @@ import { Calendar, MapPin, Send, ArrowRight } from 'lucide-react';
 
 export default function JobDetails({ job }) {
   if (!job) {
-    return <div className="p-6">No job selected</div>;
+    return
   }
 
   return (

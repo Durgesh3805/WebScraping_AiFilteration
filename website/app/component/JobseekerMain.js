@@ -1,8 +1,9 @@
 "use client";
 // pages/index.js
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+import {getData} from '../actions/job';
 import { 
   Calendar, 
   Clock, 
@@ -12,76 +13,47 @@ import {
   User, 
   Eye, 
   Gift, 
-  ArrowRight
+  ArrowRight,
+  ChevronRight,
+  ChevronLeft
 } from 'lucide-react';
 import JobDetails from '../component/Jobseekerdetail';
 
 export default function JobSeeker() {
-  const [selectedJob, setSelectedJob] = useState('Field Sales Executive');
+  const [selectedJob, setSelectedJob] = useState('');
+  const [jobs, setJobs] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const jobsPerPage = 10;
   
-  const jobs = [
-    {
-      id: 1,
-      title: 'Field Sales Executive',
-      company: 'Electro Control Systems India Pvt Ltd',
-      logo: '/uploadedManual-680b9e0d27c8c_whatsapp_image_2025-04-25_at_8.05.50_pm.png',
-      impressions: 575,
-      daysLeft: 13,
-      experience: { min: 1, max: 2 },
-      location: 'Rajkot',
-      updatedOn: 'Apr 25, 2025',
-      requirements: ['Laptop', 'Bike'],
-      responsibilities: [
-        'Industrial Projects, Electrical Consultancy, Building Projects',
-        'Electrical Panel Inquiry, Turnkey Projects Inquiry',
-        'Order Conversion',
-        'DATA Analytics, DATA Management, Estimation, Negotiations',
-        'Lead Generation, Followups, Co-Ordination, Estimation, Negotiation, Followup, Comparison, Products and Market Awareness, Communications, Ability to Convert into Orders, Data Management, Set Reminders, Give Updates to the Senior, Time management',
-      ],
-      applicationDeadline: '09 May 25, 12:00 PM IST',
-      workDays: '6 Days',
-      jobType: 'On Field',
-      jobTiming: 'Full Time',
-      perks: ['Transport', 'Food & Beverages'],
-    },
-    {
-      id: 2,
-      title: 'Outside Sales Representative',
-      company: 'TekPillar®',
-      logo: '/680b941695294_organisation_image-iyxDdJ8Gfj2106167239hEHfyv8Zn7.png',
-      responsibilities: [
-        'Industrial Projects, Electrical Consultancy, Building Projects',
-        'Electrical Panel Inquiry, Turnkey Projects Inquiry',
-        'Order Conversion',
-        'DATA Analytics, DATA Management, Estimation, Negotiations',
-        'Lead Generation, Followups, Co-Ordination, Estimation, Negotiation, Followup, Comparison, Products and Market Awareness, Communications, Ability to Convert into Orders, Data Management, Set Reminders, Give Updates to the Senior, Time management',
-      ],
-      applicationDeadline: '09 May 25, 12:00 PM IST',
-      workDays: '6 Days',
-      jobType: 'On Field',
-      jobTiming: 'Full Time',
-      perks: ['Transport', 'Food & Beverages'],
-      impressions: 530,
-      daysLeft: 13,
-      applied: 1,
-    },
-    {
-      id: 3,
-      title: 'Sales Manager',
-      company: 'The Royaleum Atelier',
-      logo: '/uploadedManual-680b8e8e4bf43_logo_white_h_color_copy_3.png',
-      impressions: 1157,
-      daysLeft: 13,
-    },
-    {
-      id: 4,
-      title: 'Site Supervisor',
-      company: 'RG DZINE',
-      logo: '/uploadedManual-680b888ea6df9_screenshot_25-4-2025_183351_www.bing.com.png',
-      daysLeft: 13,
-      applied: 2,
-    },
-  ];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getData(); 
+        setJobs(response); // Update the jobs state with the fetched data 
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+  
+    fetchData();
+  }, []);
+  
+  const nextPage = () => {
+    if (currentPage * jobsPerPage < jobs.length) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+  
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+  
+  // Calculate the current jobs to display
+  const indexOfLastJob = currentPage * jobsPerPage;
+  const indexOfFirstJob = indexOfLastJob - jobsPerPage;
+  const currentJobs = jobs.slice(indexOfFirstJob, indexOfLastJob);
   
   const activeJob = jobs.find(job => job?.title === selectedJob) || null;
   
@@ -95,8 +67,8 @@ export default function JobSeeker() {
 
       <div className="flex flex-col md:flex-row">
         {/* Left sidebar - Job listings */}
-        <div className="w-full md:w-1/3 md:border-r border-gray-200 md:h-screen p-4">
-          {jobs.map((job) => (
+        <div className="w-full md:w-1/3 md:border-r border-gray-200 md:h-screen p-4 overflow-y-auto">
+          {currentJobs.map((job) => (
             <div 
               key={job.id} 
               className={`mb-4 p-4 rounded-md border cursor-pointer transition-all ${
@@ -159,6 +131,37 @@ export default function JobSeeker() {
               </div>
             </div>
           ))}
+          
+          {/* Pagination controls */}
+          {jobs.length > jobsPerPage && (
+            <div className="flex justify-between items-center mt-4 mb-4">
+              <button 
+                onClick={prevPage}
+                disabled={currentPage === 1}
+                className={`px-4 py-2 flex items-center justify-center text-red-500 font-medium bg-white border border-gray-200 rounded-md shadow-sm transition-colors ${
+                  currentPage === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-50'
+                }`}
+              >
+                <ChevronLeft className="w-4 h-4 mr-1" />
+                <span>Previous</span>
+              </button>
+              
+              <div className="text-sm text-gray-600">
+                Page {currentPage} of {Math.ceil(jobs.length / jobsPerPage)}
+              </div>
+              
+              <button 
+                onClick={nextPage}
+                disabled={currentPage * jobsPerPage >= jobs.length}
+                className={`px-4 py-2 flex items-center justify-center text-red-500 font-medium bg-white border border-gray-200 rounded-md shadow-sm transition-colors ${
+                  currentPage * jobsPerPage >= jobs.length ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-50'
+                }`}
+              >
+                <span>Next</span>
+                <ChevronRight className="w-4 h-4 ml-1" />
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Main content - Job details */}
