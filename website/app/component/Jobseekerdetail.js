@@ -9,13 +9,16 @@ export default function JobDetails({ job }) {
   return (
     <div className="p-4 sm:p-6">
       <div className="flex flex-col sm:flex-row items-start mb-6 gap-4">
-        <div className="w-16 h-16 flex-shrink-0 bg-gray-100 rounded-md flex items-center justify-center overflow-hidden">
+
+         {/* if logo is not available*/}
+         
+        {/* <div className="w-16 h-16 flex-shrink-0 bg-gray-100 rounded-md flex items-center justify-center overflow-hidden">
           {job.logo ? (
             <img src={job.logo} alt="Company Logo" className="w-full h-full object-cover" />
           ) : (
             <div className="w-10 h-10 bg-gray-200 rounded"></div>
           )}
-        </div>
+        </div> */} 
 
         <div className="flex-1">
           <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">{job.title || 'Job Title'}</h1>
