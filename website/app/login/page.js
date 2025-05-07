@@ -5,6 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import RotatingIllustration from '../component/components/RotatingIllustration';
 import SocialLogin from '../component/components/SocialLogin';
+import SignInForm from '../component/components/SignInForm';
+
 export default function EmployerLogin() {
   return (
     <>
@@ -36,60 +38,7 @@ export default function EmployerLogin() {
             <h1 className="text-3xl font-bold text-gray-800 mb-2">Login</h1>
             <p className="text-gray-600 text-lg mb-3">Welcome back!</p>
 
-            <form action="/login" method="POST">
-              <div className="mb-3">
-                <label htmlFor="email" className="block text-gray-700 mb-2">
-                  Email <span className="text-red-500">*</span>
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Enter your Email"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
-                />
-              </div>
-
-              <div className="mb-3">
-                <label htmlFor="password" className="block text-gray-700 mb-2">
-                  Password <span className="text-red-500">*</span>
-                </label>
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  placeholder="Enter your Password"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
-                />
-              </div>
-
-              <div className="flex justify-between items-center mb-3">
-                <div className="flex items-center">
-                  <input
-                    id="remember-me"
-                    name="rememberMe"
-                    type="checkbox"
-                    className="h-4 w-4 text-red-500 focus:ring-red-400 border-gray-300 rounded"
-                  />
-                  <label htmlFor="remember-me" className="ml-2 block text-gray-700">
-                    Remember me
-                  </label>
-                </div>
-                <Link href="/forgot-password" className="text-blue-500 hover:text-blue-700">
-                  Forgot password?
-                </Link>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-red-500 hover:bg-red-600 text-white font-medium py-3 px-4 rounded-md flex justify-center items-center"
-              >
-                Login <svg className="ml-2 w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-              </button>
-            </form>
-
+            <SignInForm/>
             <div className="text-center mt-2">
               <p className="text-gray-700">
                 New to GrabJobs?{' '}
