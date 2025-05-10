@@ -147,13 +147,13 @@ export default function JobDetails({ job }) {
         )}
 
         {job.posted_on && (
-          <InfoCard title="Posted On" icon="/calendar.png">
+          <InfoCard title="Posted On" icon="/Posted On.png">
             <p className="text-gray-600 mt-1 text-sm">Posted: {job.posted_on}</p>
           </InfoCard>
         )}
 
 {job.link && (
-  <InfoCard title="Job Link" icon="/link.png">
+  <InfoCard title="Job Link" icon="/download (2).png">
     <p className="text-gray-600 mt-1 text-sm">
       <a href={job.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
         View Job Posting
@@ -163,16 +163,11 @@ export default function JobDetails({ job }) {
 )}
 
 
-{job["skills/qualification"] && (
-  <InfoCard title="Qualification" icon="/education.png">
-    <p className="text-gray-600 mt-1 text-sm">
-      Qualification: {job["skills/qualification"]}
-    </p>
+{job.skills && (
+  <InfoCard title="Skills / Qualification" icon="/qualification.png">
+    <p className="text-gray-600 mt-1 text-sm">{job.skills}</p>
   </InfoCard>
 )}
-
-
-
         {job.perks?.length > 0 && (
           <InfoCard title="Perks" icon="/download (1).png" last>
             {job.perks.map((perk, index) => (
