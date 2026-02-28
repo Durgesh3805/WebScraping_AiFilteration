@@ -35,7 +35,7 @@ export default function PostJobNavbar() {
           href="#trial"
           className="bg-indigo-500 text-white px-6 py-2 rounded-full hover:bg-indigo-600 transition"
         >
-          14 days trial
+           Easy to Apply
         </a>
       </nav>
 
@@ -47,7 +47,7 @@ export default function PostJobNavbar() {
               How it Works?
             </a>
             <a href="#trial" className="py-2 mt-2 text-center bg-indigo-500 text-white px-6 py-2 rounded-full hover:bg-indigo-600 transition">
-              14 days trial
+            Easy to Apply
             </a>
           </div>
         </div>

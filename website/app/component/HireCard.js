@@ -34,10 +34,10 @@ const HiringBanner = () => {
 
           <div className="flex flex-col sm:flex-row gap-3 text-sm">
             <div className="flex items-center text-white hover:text-gray-500">
-              <span className="text-xl mr-2">✔</span> 14 Days Free Trial
+              <span className="text-xl mr-2">✔</span> Easy to Apply
             </div>
             <div className="flex items-center text-white hover:text-gray-500">
-              <span className="text-xl mr-2">✔</span> No Credit Card Required
+              <span className="text-xl mr-2">✔</span> Across Globe
             </div>
           </div>
         </div>

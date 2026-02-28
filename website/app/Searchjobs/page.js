@@ -72,7 +72,7 @@ export default function CVSearchPage() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>14 Days Free Trial</span>
+                <span> Easy to Apply</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg
@@ -86,7 +86,7 @@ export default function CVSearchPage() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>No Credit Card Required</span>
+                <span>Across Globe</span>
               </div>
             </div>
           </div>

@@ -74,7 +74,7 @@ export default function PostJobPage() {
             href="#trial"
             className="bg-indigo-500 text-white px-6 py-2 rounded-full hover:bg-indigo-600 transition"
           >
-            14 days trial
+             Easy to Apply
           </a>
         </nav>
 
@@ -86,7 +86,7 @@ export default function PostJobPage() {
                 How it Works?
               </a>
               <a href="#trial" className="py-2 mt-2 text-center bg-indigo-500 text-white px-6 py-2 rounded-full hover:bg-indigo-600 transition">
-                14 days trial
+              Easy to Apply
               </a>
             </div>
           </div>
@@ -153,7 +153,7 @@ export default function PostJobPage() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>14 Days Free Trial</span>
+                <span> Easy to Apply</span>
               </div>
               <div className="flex items-center gap-2 hover:text-indigo-500">
                 <svg
@@ -167,7 +167,7 @@ export default function PostJobPage() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>No Credit Card Required</span>
+                <span>Across Globe</span>
               </div>
             </div>
           </div>

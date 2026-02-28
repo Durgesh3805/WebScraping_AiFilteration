@@ -53,29 +53,14 @@ const Navbar = () => {
             <JobsDropdown isOpen={jobsDropdownOpen} setIsOpen={setJobsDropdownOpen} />
           </div>
 
-          <div className="relative group cursor-pointer">
-            <span className="flex items-center text-gray-700">
-              Placement Paper
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </span>
-          </div>
+         
 
-          <span className="text-gray-700 cursor-pointer">Premium Membership</span>
-
-          <div className="text-gray-700 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-          </div>
+         
         </div>
 
         {/* Right Side Options */}
         <div className="flex items-center space-x-4">
-          <span className="hidden md:inline text-gray-700 cursor-pointer">Employer Zone</span>
-          <div className="hidden md:flex border-l border-gray-300 h-6"></div>
-          <span className="hidden md:inline text-gray-700 cursor-pointer">Sales Enquiry</span>
+         
           
           {/* Login Button */}
           <Link href="/Login">
@@ -88,9 +73,9 @@ const Navbar = () => {
           </Link>
 
           {/* Post Job Button */}
-          <Link href="/post-job">
+          <Link href="/signup">
             <button className="bg-red-500 text-white rounded-md px-4 py-2 hover:bg-red-600 transition duration-300">
-              Post A Job
+             Signup
             </button>
           </Link>
 
@@ -110,11 +95,23 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-white shadow-md">
           <div className="flex flex-col space-y-3 px-4 py-3">
-            <div className="flex items-center justify-between" onClick={() => setJobsDropdownOpen(!jobsDropdownOpen)}>
-              <span className="text-gray-700">Jobs</span>
-              <svg xmlns="http://www.w3.org/2000/svg" className={`h-4 w-4 transition-transform ${jobsDropdownOpen ? 'rotate-90' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+            <div className="flex items-center justify-between " onClick={() => setJobsDropdownOpen(!jobsDropdownOpen)}>
+              <span className="text-gray-700  ">Jobs</span>
+             <svg
+  xmlns="http://www.w3.org/2000/svg"
+  className={`h-4 w-4 transform transition-transform duration-700 ease-in-out ${jobsDropdownOpen ? 'rotate-90' : ''}`}
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke="currentColor"
+>
+  <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth={2}
+    d="M9 5l7 7-7 7"
+  />
+</svg>
+
             </div>
             {jobsDropdownOpen && (
               <div className="pl-4">
@@ -147,15 +144,7 @@ const Navbar = () => {
                 </ul>
               </div>
             )}
-            <div className="flex items-center justify-between">
-              <span className="text-gray-700">Placement Paper</span>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
-            <span className="text-gray-700">Premium Membership</span>
-            <span className="text-gray-700">Employer Zone</span>
-            <span className="text-gray-700">Sales Enquiry</span>
+
             <Link href="/Login">
               <div className="flex items-center text-red-500">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">

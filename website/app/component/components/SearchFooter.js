@@ -50,7 +50,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link href="/trial" className="text-gray-600 hover:text-gray-800">
-                    14 days Trial
+                  Easy to Apply
                   </Link>
                 </li>
                 <li>

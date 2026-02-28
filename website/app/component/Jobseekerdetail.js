@@ -117,12 +117,7 @@ export default function JobDetails({ job }) {
 
         {job.experience && (
           <InfoCard title="Experience" icon="briefcase-or-office-bag-icon-in-red-and-yellow-color-vector.jpg">
-            {job.experience.min !== undefined && (
-              <p className="text-gray-600 mt-1 text-sm">Minimum: {job.experience.min} year</p>
-            )}
-            {job.experience.max !== undefined && (
-              <p className="text-gray-600 text-sm">Maximum: {job.experience.max} years</p>
-            )}
+            <p className="text-gray-600 mt-1 text-sm">{job.experience}</p>
           </InfoCard>
         )}
 

@@ -12,7 +12,7 @@ export default function Home() {
       <div className="flex flex-col md:flex-row px-6 md:px-16 py-12 gap-12">
         <div className="md:w-1/2 pt-6">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-gray-900 mb-6">
-            The Best Recruitment Platform For Smart Companies
+            The Best Job Searching Platform For Smart Peoples
           </h1>
           <h2 className="text-xl sm:text-2xl font-medium mb-8 text-gray-800">
             Post Jobs & Hire Staff in Minutes!
@@ -39,7 +39,7 @@ export default function Home() {
 
           {/* Feature list */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 text-gray-500 mt-6 text-sm font-medium space-y-3 sm:space-y-0 hover:text-gray-900">
-            {["14 Days Free Trial", "No Credit Card Required", "Over 10M+ Candidates"].map((item, i) => (
+            {[" Easy to Apply", "Across Globe", "Over 10M+ Jobs"].map((item, i) => (
               <div key={i} className="flex items-center">
                 <svg className="h-5 w-5 text-black mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -57,7 +57,7 @@ export default function Home() {
         <div className="md:w-1/2 relative">
           <div className="relative w-full h-96 md:h-full min-h-[300px]">
             <Image
-              src="/image.png"
+              src="/Screenshot 2025-05-19 150225.png"
               alt="Recruiter illustration"
               fill
               style={{ objectFit: "contain" }}
